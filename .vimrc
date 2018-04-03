@@ -28,7 +28,7 @@ set noeb
 " 告诉我们文件的哪一行被改变过
 set report=0
 " 可以在buffer的任何地方使用鼠标
-" set mouse=a
+set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
 
@@ -202,12 +202,15 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " vundle 管理的插件列表必须位于vundle#begin()和vundle#end()之间
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim' 
 Plugin 'L9'
 Plugin 'chxuan/change-colorscheme'
+" 对齐线
 Plugin 'Yggdroot/indentLine'
+" 智能搜索
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
+" 
 Plugin 'wsdjeg/FlyGrep.vim'
 Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
@@ -230,7 +233,9 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+" 头文件和源文件切换
 Plugin 'vim-scripts/a.vim'
+" 生成函数说明文档
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vim-scripts/txt.vim'
 Plugin 'ryanoasis/vim-devicons'
@@ -263,7 +268,7 @@ let g:NERDTreeDirArrowExpandable='♥'
 let g:NERDTreeDirArrowCollapsible='♥'
 
 " Doxygen
-let g:DoxygenToolkit_authorName="chxuan, 787280310@qq.com"
+let g:DoxygenToolkit_authorName="weiliangchen, goodluckcwl@gmail.com"
 let s:licenseTag = "Copyright(C)\<enter>"
 let s:licenseTag = s:licenseTag . "For free\<enter>"
 let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
@@ -279,6 +284,8 @@ let g:ycm_warning_symbol = '>*'
 let g:ycm_seed_identifiers_with_syntax = 1 
 let g:ycm_complete_in_comments = 1 
 let g:ycm_complete_in_strings = 1 
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 "let g:ycm_cache_omnifunc = 0 
 nnoremap <leader>u :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>i :YcmCompleter GoToDefinition<CR>
@@ -363,7 +370,7 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " markdown
-let g:mkdp_path_to_chrome = "firefox"
+let g:mkdp_path_to_chrome = "google-chrome"
 nmap <silent> <F7> <Plug>MarkdownPreview
 imap <silent> <F7> <Plug>MarkdownPreview
 nmap <silent> <F8> <Plug>StopMarkdownPreview
@@ -389,7 +396,8 @@ map <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " indentLine
-let g:indentLine_enabled=0
+let g:indentLine_enabled=1
+let g:indentLine_char = '.'
 nmap <Leader><Leader>il :IndentLinesToggle<CR>
 
 " pydiction
