@@ -1,3 +1,6 @@
+
+# My Vim Construction
+Note that this is the setting of my vim. The official vimplus is at https:github.com/chxuan/vimplus.
 ![][1]
 
 An automatic configuration program for vim
@@ -209,7 +212,8 @@ Q & A
 - markdown-preview
 
     ![][49]
-
+# Reference
+  https://github.com/chxuan/vimplus
 
   [1]: https://raw.githubusercontent.com/chxuan/vimplus/master/screenshots/vimplus-logo.png
   [2]: https://raw.githubusercontent.com/chxuan/vimplus/master/screenshots/main.png
